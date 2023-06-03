@@ -1,0 +1,50 @@
+// app global css in SCSS form
+.bg-background {
+  background-color: $background;
+}
+
+.bg-background           {
+  background-color: $background !important;
+};
+.bg-background-alt       {
+  background-color: $background-alt !important;
+};
+.bg-background-deep      {
+  background-color: $background-deep !important;
+};
+.bg-background-highlight {
+  background-color: $background-highlight !important;
+};
+.bg-background-overlay   {
+  background-color: $background-overlay !important;
+};
+
+.text-text {
+  color: $text;
+}
+.text-text-soft {
+  color: $text-soft;
+}
+
+.text-link {
+  color: $link;
+}
+.text-link-soft {
+  color: $link-soft;
+}
+.text-link-artist {
+  color: $link-artist;
+}
+.text-link-character {
+  color: $link-character;
+}
+.text-link-copyright {
+  color: $link-copyright;
+}
+.text-link-metadata {
+  color: $link-metadata;
+}
+
+body {
+  background-color: $background;
+}

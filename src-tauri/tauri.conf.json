@@ -1,0 +1,82 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "quasar build",
+    "beforeDevCommand": "quasar dev",
+    "devPath": "http://localhost:9000",
+    "distDir": "../dist/YKTR"
+  },
+  "package": {
+    "productName": "YKTR",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "fs": {
+        "createDir": true,
+        "exists": true,
+        "readFile": true,
+        "scope": ["$APPLOCALDATA", "$APPLOCALDATA/*"],
+        "writeFile": true
+      },
+      "http": {
+        "request": true,
+        "scope": ["https://rule34.xxx/*", "https://wimg.rule34.xxx/*"]
+      },
+      "window": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.yktr.xxx",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "maximized": true,
+        "x": 2000,
+        "y": 0,
+        "resizable": true,
+        "title": "You Know The Rule"
+      }
+    ],
+    "macOSPrivateApi": true
+  }
+}

@@ -44,7 +44,7 @@
   const confirm = useModel<boolean>(instance, "open")
 
   const inputs: Tag[][] = reactive([[]])
-  watch(inputs, newVal => console.log({ newVal }))
+  watch(inputs, console.log)
 </script>
 
 <script lang="ts">

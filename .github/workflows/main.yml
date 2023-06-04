@@ -52,8 +52,7 @@ jobs:
 
       - name: Install app dependencies from lockfile and build web
         # NOTE: comment out && yarn build if frontend does not have build script
-        run: npm install -g pnpm
-        run: npm install --frozen-lockfile
+        run: npm install -g pnpm && pnpm install --frozen-lockfile
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0

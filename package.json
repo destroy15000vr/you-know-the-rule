@@ -9,8 +9,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "start": "tauri dev",
     "build": "tauri build",
-    "tauri": "tauri build",
-    "tauri build": "tauri build"
+    "tauri": "tauri"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",

@@ -1,3 +1,5 @@
+# @format
+
 name: App Builder
 on:
   push:
@@ -36,12 +38,11 @@ jobs:
         uses: actions/setup-node@v3
         # NOTE: enterprise developers may hard code a version
         with:
-          node-version: latest
+          node-version: ^18
           # node-version-file: '.nvmrc'
 
       - name: Install Rust (Stable)
-        run:
-          curl https://sh.rustup.rs -sSf | sh -s -- -y
+        run: curl https://sh.rustup.rs -sSf | sh -s -- -y
 
       - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-latest'

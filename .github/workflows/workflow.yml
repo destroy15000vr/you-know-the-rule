@@ -39,6 +39,9 @@ jobs:
         # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
         # You can remove the one that doesn't apply to your app to speed up the workflow a bit.
 
+      - name: install pnpm
+        run: npm install -g pnpm
+
       - name: setup node
         uses: actions/setup-node@v4
         with:
@@ -50,7 +53,8 @@ jobs:
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
           targets:
-            ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+            ${{ matrix.platform == 'macos-latest' &&
+            'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -59,7 +63,7 @@ jobs:
 
       - name: Install app dependencies from lockfile and build web
         # NOTE: comment out && yarn build if frontend does not have build script
-        run: npm install -g pnpm && pnpm install
+        run: pnpm install
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
